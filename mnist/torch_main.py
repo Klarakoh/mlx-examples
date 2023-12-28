@@ -7,18 +7,7 @@ import time
 import mnist
 
 
-class MLP(torch.nn.Module):
-    def __init__(self, num_layers, input_dim, hidden_dim, output_dim):
-        super().__init__()
-        layer_sizes = [hidden_dim] * num_layers
-        self.layers = torch.nn.ModuleList(
-            [
-                torch.nn.Linear(idim, odim)
-                for idim, odim in zip(
-                    [input_dim] + layer_sizes, layer_sizes + [output_dim]
-                )
-            ]
-        )
+
 
     def forward(self, x):
         x = self.layers[0](x)
