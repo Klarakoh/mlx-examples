@@ -8,15 +8,6 @@ import time
 import mnist
 
 
-def init_model(key, num_layers, input_dim, hidden_dim, output_dim):
-    params = []
-    layer_sizes = [hidden_dim] * num_layers
-    for idim, odim in zip([input_dim] + layer_sizes, layer_sizes + [output_dim]):
-        key, wk = jax.random.split(key, 2)
-        W = 1e-2 * jax.random.normal(wk, (idim, odim))
-        b = jnp.zeros((odim,))
-        params.append((W, b))
-    return params
 
 
 def feed_forward(params, X):
