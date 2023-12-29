@@ -4,12 +4,6 @@ from dataclasses import dataclass
 from transformers import BertTokenizer
 from mlx.utils import tree_unflatten
 
-import mlx.core as mx
-import mlx.nn as nn
-import argparse
-import numpy
-import math
-
 
 @dataclass
 class ModelArgs:
